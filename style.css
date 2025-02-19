@@ -2,10 +2,14 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+    font-family: "STARWARS", "Arial", sans-serif;
 }
+
 body {
-    background-color: rgb(32, 32, 32);
-    background-image: url(https://janschreiber.github.io/img2/black-chalk.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-image: url("Public/Pic/StarWars.png");
+    background-size: cover;
     color: rgb(230, 230, 230);
     text-align: center;
     font-family: 'Indie Flower', 'Comic Sans', cursive;
@@ -17,38 +21,151 @@ section {
     text-align: center;
 }
 
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
 .game--title {
-    font-size: 100px;
-    margin: 0 auto;
+    font-size: 4em;
+    color: black;
+    margin: 30px auto;
+    -webkit-text-stroke-color: Gold;
+    -webkit-text-stroke-width: 2px;
+}
+
+.game--name {
+    font-size: 3em;
+    margin: 20px auto;
+    color: black;
+    -webkit-text-stroke-color: Gold;
+    -webkit-text-stroke-width: 1px;
+}
+
+.player--choosing {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 50%;
+    background-image: url("Public/Pic/2d77bf24726b44adb5042ae556409022.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.player--choosing h2 {
+    margin: 150px auto 20px;
+    font-size: 3em;
+    color: black;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+.choosing--buttons {
+    width: 100%;
+    max-width: 817px;
+    display: flex;
+    justify-content: space-between;
+}
+.player--one {
+    width: 30%;
+    color: FireBrick;
+    -webkit-text-stroke-color: hotpink;
+    -webkit-text-stroke-width: 1px;
+    font-size: 4rem;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+} 
+
+.player--two {
+    width: 30%;
+    color: DodgerBlue;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+    font-size: 4rem;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.start {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: goldenrod;
+    -webkit-text-stroke-color: rgb(237, 242, 243);
+    -webkit-text-stroke-width: 0.5px;
+    cursor: pointer;
 }
 
 .game--container {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 306px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 50vh;
+    height: 50vh;
     margin: 30px auto;
-    background-color: #11213a;
-    color: #04c0b2;
+    background-image: url("Public/Pic/Sky.png");
+    background-size: cover;
+    font-size: 4em;
 }
 
 .cell {
+    display: flex;
     font-family: "Permanent Marker", cursive;
-    width: 100px;
-    height: 100px;
     box-shadow: 2px 2px 2px 2px rgb(230, 230, 230);
     border: 2px solid rgb(230, 230, 230);
     cursor: pointer;
     line-height: 100px;
-    font-size: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
 .game--status {
-    font-size: 50px;
+    font-size: 5em;
     margin: 20px auto;
+    color: black;
+    -webkit-text-stroke-color: Gold;
+    -webkit-text-stroke-width: 1px;
 }
 
-.game--restart {
-	width: 200px;
+.game--restart, .game--next {
+    width: 200px;
     height: 50px;
     font-size: 25px;
+    border-radius: 10px;
+    background-color: goldenrod;
+    -webkit-text-stroke-color: rgb(237, 242, 243);
+    -webkit-text-stroke-width: 0.5px;
+}
+
+
+@media (min-height: 919px ) {
+    .game--container {
+        font-size: 6em;
+    }
+    .game--status {
+        font-size: 5em;
+    }
+
+}
+
+@font-face {
+    font-family:"STARWARS";
+    src:url("Public/fonts/STARWARS/STARWARS.eot") format("eot"),url("Public/fonts/STARWARS/STARWARS.woff") format("woff"),url("Public/fonts/STARWARS/STARWARS.ttf") format("truetype"),url("Public/fonts/STARWARS/STARWARS.svg") format("svg");
+    font-weight:normal;
+    font-style:normal;
 }
